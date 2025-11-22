@@ -11,25 +11,21 @@ jobs:
     runs-on: self-hosted
     
     steps:
-      - name: Navigate to project directory
-        run: cd ~/url-shortener
-
       - name: Pull latest Docker image
+        working-directory: ~/url-shortener
         run: docker-compose pull
 
       - name: Restart containers
+        working-directory: ~/url-shortener
         run: |
-          cd ~/url-shortener
           docker-compose up -d --remove-orphans
           docker system prune -f
 
       - name: Check container status
-        run: |
-          cd ~/url-shortener
-          docker-compose ps
+        working-directory: ~/url-shortener
+        run: docker-compose ps
 
       - name: View app logs
-        run: |
-          cd ~/url-shortener
-          docker-compose logs --tail=50 app
+        working-directory: ~/url-shortener
+        run: docker-compose logs --tail=50 app
 
