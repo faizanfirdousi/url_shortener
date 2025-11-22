@@ -15,7 +15,7 @@ jobs:
         run: cd ~/url-shortener
 
       - name: Pull latest Docker image
-        run: docker-compose pull app
+        run: docker-compose pull
 
       - name: Restart containers
         run: |
