@@ -3,7 +3,7 @@ document.getElementById('shorten-form').addEventListener('submit', async (event)
 
     const url = document.getElementById('url-input').value;
     const resultDiv = document.getElementById('result');
-
+// hello
     try {
         const response = await fetch('/url', {
             method: 'POST',
