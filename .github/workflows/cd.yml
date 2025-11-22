@@ -11,16 +11,23 @@ jobs:
     runs-on: self-hosted
     
     steps:
+      - name: Stop and remove old containers
+        run: |
+          cd $HOME/url-shortener
+          docker-compose down || true
+
       - name: Pull latest Docker image
         run: |
           cd $HOME/url-shortener
-          docker-compose pull
+          docker-compose pull app
 
-      - name: Restart containers
+      - name: Start containers
         run: |
           cd $HOME/url-shortener
           docker-compose up -d --remove-orphans
-          docker system prune -f
+
+      - name: Clean up unused images
+        run: docker system prune -f
 
       - name: Check container status
         run: |
