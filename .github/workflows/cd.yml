@@ -12,20 +12,23 @@ jobs:
     
     steps:
       - name: Pull latest Docker image
-        working-directory: ~/url-shortener
-        run: docker-compose pull
+        run: |
+          cd $HOME/url-shortener
+          docker-compose pull
 
       - name: Restart containers
-        working-directory: ~/url-shortener
         run: |
+          cd $HOME/url-shortener
           docker-compose up -d --remove-orphans
           docker system prune -f
 
       - name: Check container status
-        working-directory: ~/url-shortener
-        run: docker-compose ps
+        run: |
+          cd $HOME/url-shortener
+          docker-compose ps
 
       - name: View app logs
-        working-directory: ~/url-shortener
-        run: docker-compose logs --tail=50 app
+        run: |
+          cd $HOME/url-shortener
+          docker-compose logs --tail=50 app
 
