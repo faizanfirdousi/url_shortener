@@ -1,0 +1,97 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.darwin
+*.linux
+*.windows
+
+# Test binary, generated with `go test -c`
+*.test
+
+# Output of the go generate command
+*.pb.go
+
+# Compiled binary (the actual application)
+url-shortener
+cmd/url-shortener/url-shortener
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+.AppleDouble
+._*
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Dependencies
+/vendor/
+
+# Log files
+*.log
+logs/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# SSH keys and certificates
+*.pem
+*.key
+*.crt
+*.cert
+id_rsa
+id_rsa.pub
+*.ppk
+
+# Local configuration files
+*.local.yaml
+config/local.yaml
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Coverage files
+coverage.out
+coverage.html
+*.out
+
+# Air (live reload) temp files
+tmp/
+.air.toml.bak
+
+# Docker
+.dockerignore.bak
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+
+# Project specific - DO NOT ignore these (they should be committed):
+DEPLOYMENT_GUIDE.md
+QUICK_START.md
+# docker-compose.yml
+# docker-compose.prod.yml
+# Dockerfile
+# config/prod.yaml (template, but update password!)
+# .github/workflows/deploy.yml

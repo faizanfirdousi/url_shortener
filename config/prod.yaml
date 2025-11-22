@@ -1,0 +1,17 @@
+env: "prod"
+postgres:
+  host: "postgres"
+  port: "5432"
+  user: "postgres"
+  password: "password"  # ⚠️ SECURITY: Change this to a strong password in production!
+  dbname: "url_shortener"
+redis:
+  address: "redis:6379"
+  password: ""
+  db: 0
+http_server:
+  address: "0.0.0.0:8082"
+  timeout: 4s
+  idle_timeout: 30s
+  user: "Shabby8574"
+  # The password will be set via an environment variable HTTP_SERVER_PASSWORD

@@ -1,0 +1,13 @@
+.git
+.gitignore
+*.md
+*.bak
+url-shortener
+tests/
+*.test
+coverage.out
+.env
+.env.local
+*.log
+
+
