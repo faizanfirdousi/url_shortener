@@ -15,7 +15,7 @@
 *.pb.go
 
 # Compiled binary (the actual application)
-url-shortener
+/url-shortener
 cmd/url-shortener/url-shortener
 
 # Backup files
