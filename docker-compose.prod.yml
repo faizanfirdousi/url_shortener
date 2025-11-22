@@ -36,12 +36,13 @@ services:
       retries: 5
 
   app:
-    image: YOUR_DOCKERHUB_USERNAME/url-shortener:latest  # ⚠️ CHANGE THIS!
+    image: ${DOCKER_USERNAME:-yourusername}/url-shortener:latest  # Set DOCKER_USERNAME in .env
     container_name: url_shortener_app
     ports:
       - "8082:8082"
     environment:
       - CONFIG_PATH=/app/config/prod.yaml
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
       - HTTP_SERVER_PASSWORD=${HTTP_SERVER_PASSWORD:-changeme}
     depends_on:
       postgres:

@@ -3,7 +3,7 @@ postgres:
   host: "postgres"
   port: "5432"
   user: "postgres"
-  password: "password"  # ⚠️ SECURITY: Change this to a strong password in production!
+  password: ""  # Will be set via POSTGRES_PASSWORD environment variable
   dbname: "url_shortener"
 redis:
   address: "redis:6379"

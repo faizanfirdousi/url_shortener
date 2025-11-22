@@ -9,7 +9,7 @@ import (
 )
 
 type Config struct {
-	Env        string `yaml:"env" env-default:"local"`
+	Env        string         `yaml:"env" env-default:"local"`
 	Postgres   PostgresConfig `yaml:"postgres"`
 	Redis      RedisConfig    `yaml:"redis"`
 	HTTPServer `yaml:"http_server"`
@@ -25,7 +25,7 @@ type PostgresConfig struct {
 	Host     string `yaml:"host" env-required:"true"`
 	Port     string `yaml:"port" env-required:"true"`
 	User     string `yaml:"user" env-required:"true"`
-	Password string `yaml:"password" env-required:"true"`
+	Password string `yaml:"password" env-required:"true" env:"POSTGRES_PASSWORD"`
 	DBName   string `yaml:"dbname" env-required:"true"`
 }
 

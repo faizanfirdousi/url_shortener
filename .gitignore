@@ -90,6 +90,20 @@ Icon?
 # Project specific - DO NOT ignore these (they should be committed):
 DEPLOYMENT_GUIDE.md
 QUICK_START.md
+AWS_IAM_SETUP.md
+BUILD_AND_DEPLOY.md
+.gitignore.notes.md
+
+# Documentation files created during deployment setup (ignore these)
+DEPLOYMENT_CHECKLIST.md
+QUICK_DEPLOYMENT_STEPS.md
+PASSWORD_GUIDE.md
+BUILD_AND_PUSH.md
+FIX_PASSWORD_ISSUE.md
+setup-ec2.sh
+setup-ec2.sh.bak
+
+
 # docker-compose.yml
 # docker-compose.prod.yml
 # Dockerfile

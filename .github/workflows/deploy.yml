@@ -41,6 +41,8 @@ jobs:
           script: |
             cd ~/url-shortener
             docker-compose pull
-            docker-compose up -d
+            docker-compose up -d --remove-orphans
             docker system prune -f
+            docker-compose ps
+            echo "✅ Deployment complete! Check logs with: docker-compose logs -f app"
 
