@@ -1,0 +1,35 @@
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["Docker Image CI"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    
+    steps:
+      - name: Navigate to project directory
+        run: cd ~/url-shortener
+
+      - name: Pull latest Docker image
+        run: docker-compose pull app
+
+      - name: Restart containers
+        run: |
+          cd ~/url-shortener
+          docker-compose up -d --remove-orphans
+          docker system prune -f
+
+      - name: Check container status
+        run: |
+          cd ~/url-shortener
+          docker-compose ps
+
+      - name: View app logs
+        run: |
+          cd ~/url-shortener
+          docker-compose logs --tail=50 app
+
